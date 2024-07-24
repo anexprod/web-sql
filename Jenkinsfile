@@ -22,6 +22,7 @@ pipeline {
         }
         stage ('Run tests'){
           steps {
+            script{
             sh "echo 'run some tests'"
           }
         }
@@ -39,7 +40,7 @@ pipeline {
             }
       }
         post {
-          failer {
+          failure {
             echo "Build or test failed"
         }
       }
